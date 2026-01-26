@@ -59,7 +59,28 @@ export type MetalType =
   | 'tellurium'
   | 'bismuth'
   | 'antimony'
-  | 'rhenium';
+  | 'rhenium'
+  // Meme minerals (real minerals with funny names)
+  | 'cummingtonite'
+  | 'analcime'
+  | 'dickite'
+  | 'arsenic'
+  | 'uraninite'
+  | 'fukalite'
+  | 'cubanite'
+  | 'clintonite'
+  | 'mordenite'
+  | 'erectorite'
+  | 'fukuchilite'
+  | 'bastnasite'
+  | 'hookerite'
+  | 'kunzite'
+  | 'pectolite'
+  | 'phosgenite'
+  | 'crocidolite'
+  | 'mimetite'
+  | 'orpiment'
+  | 'realgar';
 
 export interface MetalInfo {
   name: string;
@@ -68,7 +89,7 @@ export interface MetalInfo {
   color: string;
   colorDark: string;
   pricePerOz: string;
-  category: 'precious' | 'base' | 'industrial' | 'rare_earth' | 'strategic' | 'alloy';
+  category: 'precious' | 'base' | 'industrial' | 'rare_earth' | 'strategic' | 'alloy' | 'meme';
 }
 
 export const METAL_INFO: Record<MetalType, MetalInfo> = {
@@ -560,6 +581,188 @@ export const METAL_INFO: Record<MetalType, MetalInfo> = {
     pricePerOz: '$1,450',
     category: 'strategic'
   },
+
+  // === MEME MINERALS (Real minerals with funny names) ===
+  cummingtonite: {
+    name: 'Cummingtonite',
+    symbol: 'CUM',
+    description: 'Magnesium-iron silicate from Cummington, MA',
+    color: '#8B7355',
+    colorDark: '#6B5335',
+    pricePerOz: '$25',
+    category: 'meme'
+  },
+  analcime: {
+    name: 'Analcime',
+    symbol: 'ANAL',
+    description: 'Zeolite mineral, hydrated sodium aluminum silicate',
+    color: '#F5F5DC',
+    colorDark: '#D5D5BC',
+    pricePerOz: '$15',
+    category: 'meme'
+  },
+  dickite: {
+    name: 'Dickite',
+    symbol: 'DICK',
+    description: 'Clay mineral named after Allan Dick',
+    color: '#E8E8E8',
+    colorDark: '#C8C8C8',
+    pricePerOz: '$8',
+    category: 'meme'
+  },
+  arsenic: {
+    name: 'Arsenic',
+    symbol: 'ASS',
+    description: 'Toxic metalloid, poison of choice for royalty',
+    color: '#4A4A4A',
+    colorDark: '#2A2A2A',
+    pricePerOz: '$1.50',
+    category: 'meme'
+  },
+  uraninite: {
+    name: 'Uraninite',
+    symbol: 'URAN',
+    description: 'Primary uranium ore, radioactive mineral',
+    color: '#2F4F2F',
+    colorDark: '#1F3F1F',
+    pricePerOz: '$45',
+    category: 'meme'
+  },
+  fukalite: {
+    name: 'Fukalite',
+    symbol: 'FUKA',
+    description: 'Rare mineral from Fuka, Japan',
+    color: '#FFFAF0',
+    colorDark: '#E5E0D6',
+    pricePerOz: '$120',
+    category: 'meme'
+  },
+  cubanite: {
+    name: 'Cubanite',
+    symbol: 'CUBA',
+    description: 'Copper-iron sulfide, named after Cuba',
+    color: '#B8860B',
+    colorDark: '#986B0B',
+    pricePerOz: '$35',
+    category: 'meme'
+  },
+  clintonite: {
+    name: 'Clintonite',
+    symbol: 'CLIT',
+    description: 'Calcium aluminum silicate mica',
+    color: '#90EE90',
+    colorDark: '#70CE70',
+    pricePerOz: '$55',
+    category: 'meme'
+  },
+  mordenite: {
+    name: 'Mordenite',
+    symbol: 'MORD',
+    description: 'Zeolite from Morden, Nova Scotia',
+    color: '#F0FFF0',
+    colorDark: '#D0E5D0',
+    pricePerOz: '$18',
+    category: 'meme'
+  },
+  erectorite: {
+    name: 'Erectorite',
+    symbol: 'EREC',
+    description: 'Rare sodium lithium silicate mineral',
+    color: '#FFB6C1',
+    colorDark: '#E596A1',
+    pricePerOz: '$200',
+    category: 'meme'
+  },
+  fukuchilite: {
+    name: 'Fukuchilite',
+    symbol: 'FUKC',
+    description: 'Copper sulfide from Fukuchi mine, Japan',
+    color: '#2F2F2F',
+    colorDark: '#1F1F1F',
+    pricePerOz: '$85',
+    category: 'meme'
+  },
+  bastnasite: {
+    name: 'Bastnäsite',
+    symbol: 'BAST',
+    description: 'Rare earth carbonate, major REE ore',
+    color: '#DAA520',
+    colorDark: '#BA8500',
+    pricePerOz: '$65',
+    category: 'meme'
+  },
+  hookerite: {
+    name: 'Hookerite',
+    symbol: 'HOOK',
+    description: 'Green copper silicate mineral',
+    color: '#228B22',
+    colorDark: '#186B18',
+    pricePerOz: '$40',
+    category: 'meme'
+  },
+  kunzite: {
+    name: 'Kunzite',
+    symbol: 'KUNZ',
+    description: 'Pink spodumene variety, gemstone',
+    color: '#E6A8D7',
+    colorDark: '#C688B7',
+    pricePerOz: '$150',
+    category: 'meme'
+  },
+  pectolite: {
+    name: 'Pectolite',
+    symbol: 'PECT',
+    description: 'Larimar variety is blue gemstone',
+    color: '#ADD8E6',
+    colorDark: '#8DB8C6',
+    pricePerOz: '$75',
+    category: 'meme'
+  },
+  phosgenite: {
+    name: 'Phosgenite',
+    symbol: 'PHOS',
+    description: 'Lead chlorocarbonate, toxic but pretty',
+    color: '#FAFAD2',
+    colorDark: '#DADAB2',
+    pricePerOz: '$95',
+    category: 'meme'
+  },
+  crocidolite: {
+    name: 'Crocidolite',
+    symbol: 'CROC',
+    description: 'Blue asbestos, tiger eye base',
+    color: '#4169E1',
+    colorDark: '#2149C1',
+    pricePerOz: '$30',
+    category: 'meme'
+  },
+  mimetite: {
+    name: 'Mimetite',
+    symbol: 'MIME',
+    description: 'Lead arsenate, mimics pyromorphite',
+    color: '#FFD700',
+    colorDark: '#D4B700',
+    pricePerOz: '$45',
+    category: 'meme'
+  },
+  orpiment: {
+    name: 'Orpiment',
+    symbol: 'ORP',
+    description: 'Arsenic sulfide, ancient gold pigment',
+    color: '#FFD700',
+    colorDark: '#E5C100',
+    pricePerOz: '$20',
+    category: 'meme'
+  },
+  realgar: {
+    name: 'Realgar',
+    symbol: 'REAL',
+    description: 'Red arsenic sulfide, royal red',
+    color: '#FF4500',
+    colorDark: '#D53500',
+    pricePerOz: '$22',
+    category: 'meme'
+  },
 };
 
 // Get metals by category
@@ -576,6 +779,7 @@ export const METAL_CATEGORIES = [
   { id: 'industrial', name: 'Industrial Metals', icon: '🏭' },
   { id: 'rare_earth', name: 'Rare Earth', icon: '🌍' },
   { id: 'strategic', name: 'Strategic Metals', icon: '🔋' },
+  { id: 'meme', name: 'Meme Minerals', icon: '😏' },
 ] as const;
 
 export type PurityLevel = '999.9' | '999' | '995' | '950' | '925' | '900';

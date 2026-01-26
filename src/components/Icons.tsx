@@ -862,6 +862,319 @@ export function RheniumIcon({ size = 24, color = '#B8C0C8', className }: IconPro
   );
 }
 
+// ==================== MEME MINERALS ====================
+
+// Cummingtonite - Brown fibrous crystal
+export function CummingtoniteIcon({ size = 24, color = '#8B7355', className }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+      {/* Fibrous crystal shape */}
+      <polygon points="6,20 4,12 8,4 12,4 16,4 20,12 18,20" fill={color}/>
+      {/* Fiber lines */}
+      <line x1="8" y1="6" x2="7" y2="18" stroke="rgba(0,0,0,0.2)" strokeWidth="1"/>
+      <line x1="12" y1="5" x2="12" y2="19" stroke="rgba(0,0,0,0.2)" strokeWidth="1"/>
+      <line x1="16" y1="6" x2="17" y2="18" stroke="rgba(0,0,0,0.2)" strokeWidth="1"/>
+      {/* Highlight */}
+      <polygon points="8,5 12,4 10,10 6,8" fill="rgba(255,255,255,0.25)"/>
+    </svg>
+  );
+}
+
+// Analcime - White cubic crystal
+export function AnalcimeIcon({ size = 24, color = '#F5F5DC', className }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+      {/* Trapezohedral crystal */}
+      <polygon points="12,2 20,6 22,14 16,22 8,22 2,14 4,6" fill={color}/>
+      {/* Facets */}
+      <polygon points="12,2 4,6 6,10 12,8" fill="rgba(255,255,255,0.3)"/>
+      <polygon points="12,2 20,6 18,10 12,8" fill="rgba(255,255,255,0.15)"/>
+      {/* Shadow facets */}
+      <polygon points="8,22 2,14 6,14 10,20" fill="rgba(0,0,0,0.1)"/>
+    </svg>
+  );
+}
+
+// Dickite - White clay layered
+export function DickiteIcon({ size = 24, color = '#E8E8E8', className }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+      {/* Layered clay sheets */}
+      <rect x="4" y="4" width="16" height="3" fill={color}/>
+      <rect x="5" y="8" width="14" height="3" fill={color}/>
+      <rect x="4" y="12" width="16" height="3" fill={color}/>
+      <rect x="5" y="16" width="14" height="3" fill={color}/>
+      {/* Highlights */}
+      <rect x="5" y="4" width="8" height="1" fill="rgba(255,255,255,0.4)"/>
+      <rect x="6" y="12" width="6" height="1" fill="rgba(255,255,255,0.4)"/>
+    </svg>
+  );
+}
+
+// Arsenic - Dark metallic chunks
+export function ArsenicIcon({ size = 24, color = '#4A4A4A', className }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+      {/* Metallic chunks with skull hint */}
+      <polygon points="4,18 2,10 6,4 12,2 18,4 22,10 20,18 12,22" fill={color}/>
+      {/* Toxic shimmer */}
+      <polygon points="12,2 6,4 8,8 12,6 16,8 18,4" fill="rgba(100,255,100,0.15)"/>
+      {/* Dark facets */}
+      <polygon points="2,10 4,18 8,14 6,8" fill="rgba(0,0,0,0.2)"/>
+      <polygon points="22,10 20,18 16,14 18,8" fill="rgba(0,0,0,0.15)"/>
+    </svg>
+  );
+}
+
+// Uraninite - Dark green radioactive ore
+export function UraniniteIcon({ size = 24, color = '#2F4F2F', className }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+      {/* Dense ore chunk */}
+      <polygon points="4,16 2,10 4,4 10,2 18,4 22,10 20,16 14,20 6,20" fill={color}/>
+      {/* Radioactive glow spots */}
+      <circle cx="10" cy="10" r="2" fill="rgba(50,255,50,0.3)"/>
+      <circle cx="15" cy="12" r="1.5" fill="rgba(50,255,50,0.25)"/>
+      <circle cx="8" cy="15" r="1" fill="rgba(50,255,50,0.2)"/>
+      {/* Dark depth */}
+      <polygon points="14,20 20,16 18,14 12,18" fill="rgba(0,0,0,0.2)"/>
+    </svg>
+  );
+}
+
+// Fukalite - Cream white rare crystal
+export function FukaliteIcon({ size = 24, color = '#FFFAF0', className }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+      {/* Prismatic crystal */}
+      <polygon points="12,2 18,6 18,18 12,22 6,18 6,6" fill={color}/>
+      {/* Crystal facets */}
+      <polygon points="12,2 6,6 6,10 12,8" fill="rgba(255,255,255,0.3)"/>
+      <polygon points="12,2 18,6 18,10 12,8" fill="rgba(255,220,180,0.2)"/>
+      {/* Termination */}
+      <line x1="12" y1="8" x2="12" y2="22" stroke="rgba(0,0,0,0.1)" strokeWidth="1"/>
+    </svg>
+  );
+}
+
+// Cubanite - Bronze-gold sulfide
+export function CubaniteIcon({ size = 24, color = '#B8860B', className }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+      {/* Elongated crystal */}
+      <polygon points="6,20 4,14 6,4 10,2 14,2 18,4 20,14 18,20" fill={color}/>
+      {/* Metallic luster */}
+      <polygon points="10,2 6,4 6,8 10,6 14,6 18,8 18,4 14,2" fill="rgba(255,255,255,0.25)"/>
+      {/* Striations */}
+      <line x1="8" y1="8" x2="7" y2="18" stroke="rgba(0,0,0,0.15)" strokeWidth="1"/>
+      <line x1="16" y1="8" x2="17" y2="18" stroke="rgba(0,0,0,0.15)" strokeWidth="1"/>
+    </svg>
+  );
+}
+
+// Clintonite - Green mica
+export function ClintoniteIcon({ size = 24, color = '#90EE90', className }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+      {/* Hexagonal mica plate */}
+      <polygon points="12,2 20,6 20,18 12,22 4,18 4,6" fill={color}/>
+      {/* Pearly layers */}
+      <line x1="4" y1="10" x2="20" y2="10" stroke="rgba(255,255,255,0.4)" strokeWidth="2"/>
+      <line x1="4" y1="14" x2="20" y2="14" stroke="rgba(255,255,255,0.3)" strokeWidth="2"/>
+      {/* Top highlight */}
+      <polygon points="12,2 4,6 8,8 12,4 16,8 20,6" fill="rgba(255,255,255,0.35)"/>
+    </svg>
+  );
+}
+
+// Mordenite - White fibrous zeolite
+export function MordeniteIcon({ size = 24, color = '#F0FFF0', className }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+      {/* Fibrous spray */}
+      <polygon points="12,22 8,20 4,14 4,8 8,4 12,2 16,4 20,8 20,14 16,20" fill={color}/>
+      {/* Radiating fibers */}
+      <line x1="12" y1="12" x2="6" y2="6" stroke="rgba(0,0,0,0.1)" strokeWidth="1"/>
+      <line x1="12" y1="12" x2="18" y2="6" stroke="rgba(0,0,0,0.1)" strokeWidth="1"/>
+      <line x1="12" y1="12" x2="4" y2="12" stroke="rgba(0,0,0,0.1)" strokeWidth="1"/>
+      <line x1="12" y1="12" x2="20" y2="12" stroke="rgba(0,0,0,0.1)" strokeWidth="1"/>
+      <line x1="12" y1="12" x2="12" y2="4" stroke="rgba(0,0,0,0.1)" strokeWidth="1"/>
+    </svg>
+  );
+}
+
+// Erectorite - Pink rare mineral
+export function ErectoriteIcon({ size = 24, color = '#FFB6C1', className }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+      {/* Elongated prism */}
+      <polygon points="10,22 8,18 8,4 10,2 14,2 16,4 16,18 14,22" fill={color}/>
+      {/* Termination */}
+      <polygon points="10,2 8,4 12,6 16,4 14,2" fill="rgba(255,255,255,0.35)"/>
+      {/* Side facets */}
+      <rect x="8" y="6" width="2" height="12" fill="rgba(255,255,255,0.2)"/>
+      <rect x="14" y="6" width="2" height="12" fill="rgba(0,0,0,0.1)"/>
+    </svg>
+  );
+}
+
+// Fukuchilite - Dark copper sulfide
+export function FukuchiliteIcon({ size = 24, color = '#2F2F2F', className }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+      {/* Massive ore chunk */}
+      <polygon points="4,18 2,12 4,6 8,2 16,2 20,6 22,12 20,18 16,22 8,22" fill={color}/>
+      {/* Metallic highlights */}
+      <polygon points="8,2 4,6 6,8 10,4 14,4 18,8 20,6 16,2" fill="rgba(200,150,50,0.2)"/>
+      {/* Depth */}
+      <polygon points="8,22 4,18 8,16 12,20" fill="rgba(0,0,0,0.15)"/>
+    </svg>
+  );
+}
+
+// Bastnasite - Golden rare earth
+export function BastnasiteIcon({ size = 24, color = '#DAA520', className }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+      {/* Hexagonal crystal */}
+      <polygon points="12,2 19,6 19,18 12,22 5,18 5,6" fill={color}/>
+      {/* Waxy luster */}
+      <polygon points="12,2 5,6 7,10 12,6 17,10 19,6" fill="rgba(255,255,255,0.3)"/>
+      {/* Layered pattern */}
+      <line x1="5" y1="12" x2="19" y2="12" stroke="rgba(0,0,0,0.15)" strokeWidth="1"/>
+      <line x1="5" y1="16" x2="19" y2="16" stroke="rgba(0,0,0,0.1)" strokeWidth="1"/>
+    </svg>
+  );
+}
+
+// Hookerite - Green copper mineral
+export function HookeriteIcon({ size = 24, color = '#228B22', className }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+      {/* Botryoidal shape */}
+      <circle cx="12" cy="12" r="6" fill={color}/>
+      <circle cx="7" cy="10" r="4" fill={color}/>
+      <circle cx="17" cy="10" r="4" fill={color}/>
+      <circle cx="9" cy="16" r="3" fill={color}/>
+      <circle cx="15" cy="16" r="3" fill={color}/>
+      {/* Highlights */}
+      <circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.25)"/>
+      <circle cx="15" cy="8" r="1" fill="rgba(255,255,255,0.3)"/>
+    </svg>
+  );
+}
+
+// Kunzite - Pink spodumene
+export function KunziteIcon({ size = 24, color = '#E6A8D7', className }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+      {/* Prismatic crystal */}
+      <polygon points="8,22 6,18 6,6 8,2 16,2 18,6 18,18 16,22" fill={color}/>
+      {/* Striated faces */}
+      <line x1="8" y1="4" x2="8" y2="20" stroke="rgba(255,255,255,0.3)" strokeWidth="2"/>
+      <line x1="12" y1="3" x2="12" y2="21" stroke="rgba(255,255,255,0.2)" strokeWidth="1"/>
+      {/* Termination */}
+      <polygon points="8,2 6,6 12,8 18,6 16,2" fill="rgba(255,255,255,0.35)"/>
+    </svg>
+  );
+}
+
+// Pectolite - Blue Larimar
+export function PectoliteIcon({ size = 24, color = '#ADD8E6', className }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+      {/* Radiating fibrous */}
+      <polygon points="12,2 20,8 18,20 6,20 4,8" fill={color}/>
+      {/* Radial fibers */}
+      <line x1="12" y1="10" x2="6" y2="18" stroke="rgba(255,255,255,0.3)" strokeWidth="1"/>
+      <line x1="12" y1="10" x2="18" y2="18" stroke="rgba(255,255,255,0.3)" strokeWidth="1"/>
+      <line x1="12" y1="10" x2="12" y2="19" stroke="rgba(255,255,255,0.3)" strokeWidth="1"/>
+      <line x1="12" y1="10" x2="5" y2="12" stroke="rgba(255,255,255,0.3)" strokeWidth="1"/>
+      <line x1="12" y1="10" x2="19" y2="12" stroke="rgba(255,255,255,0.3)" strokeWidth="1"/>
+      {/* Center */}
+      <circle cx="12" cy="10" r="2" fill="rgba(255,255,255,0.4)"/>
+    </svg>
+  );
+}
+
+// Phosgenite - Yellow-white lead mineral
+export function PhosgeniteIcon({ size = 24, color = '#FAFAD2', className }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+      {/* Prismatic crystal */}
+      <polygon points="8,20 6,16 6,8 8,4 16,4 18,8 18,16 16,20" fill={color}/>
+      {/* Adamantine luster */}
+      <polygon points="8,4 6,8 10,10 14,10 18,8 16,4" fill="rgba(255,255,255,0.4)"/>
+      {/* Facet lines */}
+      <line x1="10" y1="10" x2="10" y2="18" stroke="rgba(0,0,0,0.1)" strokeWidth="1"/>
+      <line x1="14" y1="10" x2="14" y2="18" stroke="rgba(0,0,0,0.1)" strokeWidth="1"/>
+    </svg>
+  );
+}
+
+// Crocidolite - Blue asbestos fibers
+export function CrocidoliteIcon({ size = 24, color = '#4169E1', className }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+      {/* Fibrous bundle */}
+      <rect x="4" y="4" width="16" height="16" fill={color}/>
+      {/* Fiber lines */}
+      <line x1="5" y1="5" x2="5" y2="19" stroke="rgba(255,255,255,0.2)" strokeWidth="2"/>
+      <line x1="9" y1="4" x2="9" y2="20" stroke="rgba(255,255,255,0.15)" strokeWidth="2"/>
+      <line x1="13" y1="4" x2="13" y2="20" stroke="rgba(255,255,255,0.2)" strokeWidth="2"/>
+      <line x1="17" y1="5" x2="17" y2="19" stroke="rgba(255,255,255,0.15)" strokeWidth="2"/>
+      {/* Silky highlight */}
+      <rect x="4" y="4" width="16" height="3" fill="rgba(255,255,255,0.2)"/>
+    </svg>
+  );
+}
+
+// Mimetite - Yellow-orange arsenate
+export function MimetiteIcon({ size = 24, color = '#FFD700', className }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+      {/* Barrel-shaped crystals */}
+      <ellipse cx="8" cy="12" rx="4" ry="8" fill={color}/>
+      <ellipse cx="16" cy="14" rx="4" ry="6" fill={color}/>
+      <ellipse cx="12" cy="16" rx="3" ry="5" fill={color}/>
+      {/* Highlights */}
+      <ellipse cx="7" cy="9" rx="2" ry="3" fill="rgba(255,255,255,0.3)"/>
+      <ellipse cx="15" cy="11" rx="1.5" ry="2" fill="rgba(255,255,255,0.25)"/>
+    </svg>
+  );
+}
+
+// Orpiment - Yellow arsenic sulfide
+export function OrpimentIcon({ size = 24, color = '#FFD700', className }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+      {/* Foliated layers */}
+      <polygon points="3,18 2,14 4,10 8,8 16,8 20,10 22,14 21,18 16,20 8,20" fill={color}/>
+      {/* Layer separations */}
+      <line x1="4" y1="12" x2="20" y2="12" stroke="rgba(255,200,0,0.5)" strokeWidth="1"/>
+      <line x1="3" y1="16" x2="21" y2="16" stroke="rgba(255,200,0,0.5)" strokeWidth="1"/>
+      {/* Resinous luster */}
+      <polygon points="8,8 4,10 6,12 10,10 14,10 18,12 20,10 16,8" fill="rgba(255,255,255,0.3)"/>
+    </svg>
+  );
+}
+
+// Realgar - Red arsenic sulfide
+export function RealgarIcon({ size = 24, color = '#FF4500', className }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+      {/* Prismatic red crystal */}
+      <polygon points="8,20 6,16 6,8 8,4 16,4 18,8 18,16 16,20" fill={color}/>
+      {/* Resinous shine */}
+      <polygon points="8,4 6,8 10,10 14,10 18,8 16,4" fill="rgba(255,255,255,0.25)"/>
+      {/* Striated texture */}
+      <line x1="8" y1="6" x2="8" y2="18" stroke="rgba(0,0,0,0.1)" strokeWidth="1"/>
+      <line x1="12" y1="5" x2="12" y2="19" stroke="rgba(0,0,0,0.1)" strokeWidth="1"/>
+      <line x1="16" y1="6" x2="16" y2="18" stroke="rgba(0,0,0,0.1)" strokeWidth="1"/>
+    </svg>
+  );
+}
+
 // ==================== UTILITY ICONS ====================
 
 export function VaultIcon({ size = 24, color = 'currentColor', className }: IconProps) {
@@ -987,6 +1300,27 @@ export const METAL_ICONS: Record<MetalType, React.FC<IconProps>> = {
   bismuth: BismuthIcon,
   antimony: AntimonyIcon,
   rhenium: RheniumIcon,
+  // Meme minerals
+  cummingtonite: CummingtoniteIcon,
+  analcime: AnalcimeIcon,
+  dickite: DickiteIcon,
+  arsenic: ArsenicIcon,
+  uraninite: UraniniteIcon,
+  fukalite: FukaliteIcon,
+  cubanite: CubaniteIcon,
+  clintonite: ClintoniteIcon,
+  mordenite: MordeniteIcon,
+  erectorite: ErectoriteIcon,
+  fukuchilite: FukuchiliteIcon,
+  bastnasite: BastnasiteIcon,
+  hookerite: HookeriteIcon,
+  kunzite: KunziteIcon,
+  pectolite: PectoliteIcon,
+  phosgenite: PhosgeniteIcon,
+  crocidolite: CrocidoliteIcon,
+  mimetite: MimetiteIcon,
+  orpiment: OrpimentIcon,
+  realgar: RealgarIcon,
 };
 
 export function getMetalIcon(metalType: MetalType, size: number = 24, color?: string) {
