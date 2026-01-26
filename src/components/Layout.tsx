@@ -1,87 +1,96 @@
-import { } from 'react';
+import { ReactNode, useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Layout.css';
 
 interface LayoutProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export default function Layout({ children }: LayoutProps) {
   const location = useLocation();
+  const [time, setTime] = useState(new Date());
 
-  const isActive = (path: string) => {
-    return location.pathname === path;
+  useEffect(() => {
+    const timer = setInterval(() => setTime(new Date()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const isActive = (path: string) => location.pathname === path;
+
+  const formatTime = (date: Date) => {
+    return date.toLocaleTimeString('en-US', { 
+      hour: '2-digit', 
+      minute: '2-digit',
+      hour12: false 
+    });
   };
 
-  // Hide footer on pet chat page
-  const isPetPage = location.pathname.startsWith('/pet/');
+  const formatDay = (date: Date) => {
+    return date.toLocaleDateString('en-US', { 
+      weekday: 'short'
+    }).toUpperCase();
+  };
 
   return (
     <div className="layout">
       <header className="header">
         <div className="header-content">
-          {/* Logo */}
           <Link to="/" className="logo">
-            Pets Project
+            PROJECT METALS
           </Link>
 
-          {/* Navigation Tabs */}
           <nav className="nav-tabs">
             <Link 
               to="/" 
               className={`nav-tab ${isActive('/') ? 'active' : ''}`}
             >
-              <img src="/icons/gallery-icon.png" alt="" className="nav-icon" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
-              Gallery
+              GALLERY
             </Link>
             <Link 
               to="/create" 
               className={`nav-tab ${isActive('/create') ? 'active' : ''}`}
             >
-              <img src="/icons/create-icon.png" alt="" className="nav-icon" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
-              Create
+              CREATE
             </Link>
             <Link 
               to="/how-it-works" 
               className={`nav-tab ${isActive('/how-it-works') ? 'active' : ''}`}
             >
-              <img src="/icons/how-it-works-icon.png" alt="" className="nav-icon" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
-              How It Works
+              DOCS
             </Link>
           </nav>
 
-          {/* Right side */}
           <div className="header-right">
             <div className="live-badge">
               LIVE
             </div>
             <a 
-              href="https://x.com/i/communities/2013297391403741336/" 
+              href="https://x.com/projectmetals" 
               target="_blank" 
               rel="noopener noreferrer"
               className="x-button"
             >
               X
             </a>
+            <div className="header-time">
+              <span className="time">{formatTime(time)}</span>
+              <span className="day">{formatDay(time)}</span>
+            </div>
           </div>
         </div>
       </header>
-      
+
       <main className="main">
         {children}
       </main>
-      
-      {!isPetPage && (
-        <footer className="footer">
-          <div className="container">
-            <div className="footer-content">
-              <span className="footer-logo">Pets Project</span>
-              <span className="footer-divider">—</span>
-              <span className="footer-text">RWA for Your Beloved Companions</span>
-            </div>
-          </div>
-        </footer>
-      )}
+
+      <footer className="footer">
+        <div className="footer-content">
+          <span className="footer-logo">PROJECT METALS</span>
+          <span className="footer-divider">|</span>
+          <span className="footer-text">Tokenize Precious Metals on Solana</span>
+        </div>
+      </footer>
     </div>
   );
 }

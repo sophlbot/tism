@@ -28,13 +28,14 @@
   font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: var(--color-text);
+  color: var(--color-gold);
   transition: all 0.15s ease;
 }
 
 .logo:hover {
   opacity: 1;
   transform: scale(1.02);
+  color: var(--color-gold);
 }
 
 /* Navigation Tabs */
@@ -42,11 +43,11 @@
   display: flex;
   gap: 0;
   background: transparent;
-  border: 2px solid var(--color-text);
+  border: 2px solid var(--color-gold-dark);
   border-radius: var(--radius-sm);
   padding: 0;
   overflow: hidden;
-  box-shadow: 4px 4px 0 #000;
+  box-shadow: 4px 4px 0 var(--color-gold-dark);
 }
 
 .nav-tab {
@@ -63,7 +64,7 @@
   color: var(--color-text);
   transition: all 0.15s ease;
   border: none;
-  border-right: 2px solid var(--color-text);
+  border-right: 2px solid var(--color-gold-dark);
   text-decoration: none;
   cursor: pointer;
 }
@@ -74,12 +75,12 @@
 
 .nav-tab:hover {
   background: var(--color-bg-secondary);
-  color: var(--color-text);
+  color: var(--color-gold);
 }
 
 .nav-tab.active {
-  background: #fce4ec;
-  color: var(--color-text);
+  background: var(--color-gold);
+  color: var(--color-bg);
   font-weight: 700;
 }
 
@@ -109,8 +110,8 @@
   align-items: center;
   gap: var(--spacing-xs);
   padding: var(--spacing-xs) var(--spacing-sm);
-  background: #ff6b6b;
-  color: white;
+  background: var(--color-gold);
+  color: var(--color-bg);
   border: var(--border);
   border-radius: var(--radius-sm);
   font-size: 0.65rem;
@@ -123,7 +124,7 @@
   content: '';
   width: 6px;
   height: 6px;
-  background: white;
+  background: var(--color-bg);
   border-radius: 50%;
   animation: pulse 1s ease-in-out infinite;
 }
@@ -143,18 +144,19 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   text-decoration: none;
-  box-shadow: 4px 4px 0 #000;
+  box-shadow: 4px 4px 0 var(--color-gold-dark);
   transition: all 0.15s ease;
 }
 
 .x-button:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 #000;
+  box-shadow: 6px 6px 0 var(--color-gold);
+  color: var(--color-gold);
 }
 
 .x-button:active {
   transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 #000;
+  box-shadow: 2px 2px 0 var(--color-gold-dark);
 }
 
 /* Time */
@@ -169,6 +171,7 @@
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.05em;
+  color: var(--color-gold);
 }
 
 .header-time .day {
@@ -181,7 +184,7 @@
 /* Main */
 .main {
   flex: 1;
-  overflow: hidden; /* Prevent main scroll */
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -205,6 +208,7 @@
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.1em;
+  color: var(--color-gold);
 }
 
 .footer-divider {

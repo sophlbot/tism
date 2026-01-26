@@ -13,7 +13,7 @@ export default function HowItWorks() {
           <div className="content-box">
             <div className="document-content">
               <p>
-                "Project Pets" is a Real-World Asset (RWA) tokenization platform that transforms beloved pets into unique digital tokens on the Solana blockchain. This platform combines pixel art generation, AI-powered personality systems, and blockchain technology to create a new form of digital collectible. Users can design custom pixel art avatars, assign AI-driven personalities with unique traits and behaviors, and launch their pets as tradeable tokens on Pump.fun—a decentralized token launchpad. The central innovation lies in bridging the emotional connection to real pets with the emerging world of tokenized assets, creating a novel intersection between pet ownership, digital art, and decentralized finance.
+                "Metal RWA" is a Real-World Asset (RWA) tokenization platform that transforms precious metals into unique digital tokens on the Solana blockchain. This platform combines pixel art generation, metal property customization, and blockchain technology to create a new form of metal-backed digital asset. Users can design custom pixel art representations of gold, silver, platinum, and other precious metals, configure physical properties like purity and weight, and launch their metal tokens on Pump.fun—a decentralized token launchpad. The central innovation lies in bridging physical metal ownership with the emerging world of tokenized assets, creating a novel intersection between precious metals and decentralized finance.
               </p>
             </div>
           </div>
@@ -30,11 +30,11 @@ export default function HowItWorks() {
               <ul className="toc-list">
                 <li>Introduction & Core Concept</li>
                 <li>System Architecture</li>
+                <li>Metal Types & Properties</li>
                 <li>Pixel Art Generation System</li>
-                <li>AI Personality Engine</li>
                 <li>Token Creation Process</li>
                 <li>Blockchain Integration</li>
-                <li>User Experience Flow</li>
+                <li>Vault & Storage System</li>
                 <li>Technical Implementation</li>
               </ul>
             </div>
@@ -51,21 +51,21 @@ export default function HowItWorks() {
             <div className="document-content">
               <h3 className="subsection-title">1.1 Background</h3>
               <p>
-                Project Pets enables users to create, personalize, and tokenize digital representations of their pets. The platform operates on three fundamental layers, bridging the gap between emotional pet ownership and the emerging world of tokenized assets.
+                Metal RWA enables users to create, customize, and tokenize digital representations of precious metals. The platform operates on three fundamental layers, bridging the gap between physical metal ownership and the emerging world of tokenized assets.
               </p>
               
               <div className="info-box blue">
                 <div className="box-title">CORE PLATFORM LAYERS</div>
                 <ul>
-                  <li><strong>Visual Layer:</strong> Custom pixel art avatar generation with extensive customization options</li>
-                  <li><strong>Personality Layer:</strong> AI-driven personality system with traits, behaviors, and characteristics</li>
+                  <li><strong>Visual Layer:</strong> Custom pixel art generation for metal representations</li>
+                  <li><strong>Property Layer:</strong> Configurable metal properties including purity, weight, and finish</li>
                   <li><strong>Token Layer:</strong> Blockchain tokenization on Solana via Pump.fun integration</li>
                 </ul>
               </div>
 
               <h3 className="subsection-title">1.2 Core Innovation</h3>
               <p>
-                Each pet becomes a unique, tradeable digital asset that exists both as a visual representation and as a blockchain token, creating a new category of RWA tokens that maintain emotional value while gaining financial utility.
+                Each metal token becomes a unique, tradeable digital asset that represents physical metal ownership, creating a new category of RWA tokens that maintain intrinsic value while gaining DeFi utility.
               </p>
             </div>
           </div>
@@ -88,7 +88,7 @@ export default function HowItWorks() {
                 <ul>
                   <li><code>Frontend: React + TypeScript UI</code></li>
                   <li><code>Rendering: Canvas-based pixel art renderer</code></li>
-                  <li><code>Storage: LocalStorage for pet data persistence</code></li>
+                  <li><code>Storage: LocalStorage for token data persistence</code></li>
                   <li><code>Blockchain: Solana Web3.js integration</code></li>
                 </ul>
               </div>
@@ -103,9 +103,9 @@ export default function HowItWorks() {
                   <div className="box-title">FRONTEND LAYER</div>
                   <ul>
                     <li>React + TypeScript UI</li>
-                    <li>Canvas-based pixel art renderer</li>
-                    <li>LocalStorage for pet data persistence</li>
-                    <li>Real-time pet interaction</li>
+                    <li>Canvas-based metal renderer</li>
+                    <li>LocalStorage for data persistence</li>
+                    <li>Real-time price display</li>
                   </ul>
                 </div>
                 <div className="side-box teal">
@@ -135,47 +135,51 @@ export default function HowItWorks() {
         <section className="document-section">
           <div className="section-header">
             <div className="section-icon">■</div>
-            <h2 className="section-title">3. PIXEL ART GENERATION SYSTEM</h2>
+            <h2 className="section-title">3. METAL TYPES & PROPERTIES</h2>
           </div>
           <div className="content-box">
             <div className="document-content">
-              <h3 className="subsection-title">3.1 Rendering Engine</h3>
+              <h3 className="subsection-title">3.1 Supported Metals</h3>
               <p>
-                The pixel art generation system creates unique 32x32 pixel avatars through a procedural rendering engine that combines shape algorithms with color customization.
+                The platform supports six precious metals, each with unique properties and market values.
               </p>
               
               <div className="info-box dark-box">
-                <div className="box-title">RENDERING PARAMETERS</div>
+                <div className="box-title">METAL TYPES</div>
                 <ul>
-                  <li><code>Canvas Size: 32x32 pixels</code></li>
-                  <li><code>Pet Types: 6 distinct species</code></li>
-                  <li><code>Color Depth: Full RGB spectrum</code></li>
-                  <li><code>Pattern Support: Spots, stripes, patches</code></li>
+                  <li><code>Gold (XAU): The ultimate store of value - $2,045/oz</code></li>
+                  <li><code>Silver (XAG): Industrial and monetary metal - $23.50/oz</code></li>
+                  <li><code>Platinum (XPT): Rare precious metal - $920/oz</code></li>
+                  <li><code>Palladium (XPD): Industrial precious metal - $1,050/oz</code></li>
+                  <li><code>Copper (XCU): Essential industrial metal - $3.85/oz</code></li>
+                  <li><code>Bronze (XBZ): Copper-tin alloy - $4.20/oz</code></li>
                 </ul>
               </div>
 
-              <h3 className="subsection-title">3.2 Customization Options</h3>
+              <h3 className="subsection-title">3.2 Customizable Properties</h3>
               <p>
-                Users can customize multiple visual aspects of their pet avatar:
+                Users can customize multiple physical properties of their metal tokens:
               </p>
 
               <div className="side-by-side-boxes">
                 <div className="side-box pink">
-                  <div className="box-title">COLOR OPTIONS</div>
+                  <div className="box-title">PURITY LEVELS</div>
                   <ul>
-                    <li>Body Color (primary)</li>
-                    <li>Eye Color (iris)</li>
-                    <li>Pattern Color (optional)</li>
-                    <li>Accessory Colors</li>
+                    <li>999.9 Fine (Investment grade)</li>
+                    <li>999 Fine (Bullion standard)</li>
+                    <li>995 Fine (Good delivery)</li>
+                    <li>950 Fine (High purity)</li>
+                    <li>925 Sterling (Silver)</li>
+                    <li>900 Fine (Coin standard)</li>
                   </ul>
                 </div>
                 <div className="side-box purple">
-                  <div className="box-title">RENDERING STAGES</div>
+                  <div className="box-title">PHYSICAL ATTRIBUTES</div>
                   <ul>
-                    <li>Base body shape</li>
-                    <li>Pattern overlay</li>
-                    <li>Facial features</li>
-                    <li>Final output</li>
+                    <li>Shape: Bar, Coin, Round, Ingot</li>
+                    <li>Finish: Polished, Matte, Brushed, Antique</li>
+                    <li>Weight: oz, grams, kilograms</li>
+                    <li>Vault Location</li>
                   </ul>
                 </div>
               </div>
@@ -186,50 +190,47 @@ export default function HowItWorks() {
         <section className="document-section">
           <div className="section-header">
             <div className="section-icon">■</div>
-            <h2 className="section-title">4. AI PERSONALITY ENGINE</h2>
+            <h2 className="section-title">4. PIXEL ART GENERATION SYSTEM</h2>
           </div>
           <div className="content-box">
             <div className="document-content">
-              <h3 className="subsection-title">4.1 Core Personality Traits</h3>
+              <h3 className="subsection-title">4.1 Rendering Engine</h3>
               <p>
-                Each pet receives a unique AI personality system that defines behavior, interaction style, and characteristics.
+                The pixel art generation system creates unique visual representations of metals through a procedural rendering engine that combines shape algorithms with material properties.
               </p>
-
+              
               <div className="info-box dark-box">
-                <div className="box-title">PERSONALITY ATTRIBUTES</div>
+                <div className="box-title">RENDERING PARAMETERS</div>
                 <ul>
-                  <li><code>Name: User-defined pet name</code></li>
-                  <li><code>Temperament: friendly, shy, energetic, calm, playful, lazy</code></li>
-                  <li><code>Activity Level: 0-100 scale</code></li>
-                  <li><code>Loves Humans: Boolean social preference</code></li>
-                  <li><code>Playful: Boolean playfulness flag</code></li>
-                  <li><code>Favorite Food: Custom preference</code></li>
-                  <li><code>Bio: Optional description</code></li>
+                  <li><code>Canvas Size: 128x128 pixels</code></li>
+                  <li><code>Metal Types: 6 distinct metals</code></li>
+                  <li><code>Shape Support: Bar, Coin, Round, Ingot</code></li>
+                  <li><code>Finish Effects: Polished, Matte, Brushed, Antique</code></li>
                 </ul>
               </div>
 
-              <h3 className="subsection-title">4.2 Behavioral Impact</h3>
+              <h3 className="subsection-title">4.2 Visual Effects</h3>
               <p>
-                Personality traits directly influence multiple aspects of the pet's digital existence:
+                Each metal receives visual treatment based on its properties:
               </p>
 
               <div className="side-by-side-boxes">
                 <div className="side-box green">
-                  <div className="box-title">INTERACTION EFFECTS</div>
+                  <div className="box-title">BASE RENDERING</div>
                   <ul>
-                    <li>Chat response style</li>
-                    <li>Conversation tone</li>
-                    <li>Mood indicators</li>
-                    <li>Activity patterns</li>
+                    <li>Metal-specific color palette</li>
+                    <li>Shape geometry drawing</li>
+                    <li>Highlight placement</li>
+                    <li>Shadow rendering</li>
                   </ul>
                 </div>
                 <div className="side-box orange">
-                  <div className="box-title">DISPLAY EFFECTS</div>
+                  <div className="box-title">FINISH EFFECTS</div>
                   <ul>
-                    <li>Token metadata</li>
-                    <li>Pet card appearance</li>
-                    <li>Status indicators</li>
-                    <li>Visual characteristics</li>
+                    <li>Polished: Mirror shine</li>
+                    <li>Matte: Diffuse surface</li>
+                    <li>Brushed: Linear texture</li>
+                    <li>Antique: Aged patina</li>
                   </ul>
                 </div>
               </div>
@@ -246,22 +247,22 @@ export default function HowItWorks() {
             <div className="document-content">
               <h3 className="subsection-title">5.1 Process Pipeline</h3>
               <p>
-                The token creation process follows a multi-step pipeline from visual design to blockchain deployment.
+                The token creation process follows a multi-step pipeline from metal selection to blockchain deployment.
               </p>
 
               <div className="info-box dark-box">
                 <div className="box-title">CREATION STAGES</div>
                 <ul>
-                  <li><code>Stage 1: Metadata Preparation</code></li>
-                  <li><code>Stage 2: IPFS Upload</code></li>
-                  <li><code>Stage 3: Blockchain Transaction</code></li>
-                  <li><code>Stage 4: Token Deployment</code></li>
+                  <li><code>Stage 1: Metal Selection (type, visual)</code></li>
+                  <li><code>Stage 2: Property Configuration (purity, shape, vault)</code></li>
+                  <li><code>Stage 3: Token Details (name, ticker, supply)</code></li>
+                  <li><code>Stage 4: Launch & Tokenization</code></li>
                 </ul>
               </div>
 
               <h3 className="subsection-title">5.2 Metadata & IPFS</h3>
               <p>
-                Before blockchain deployment, all pet data is prepared and stored on IPFS:
+                Before blockchain deployment, all metal data is prepared and stored on IPFS:
               </p>
 
               <div className="side-by-side-boxes">
@@ -269,9 +270,9 @@ export default function HowItWorks() {
                   <div className="box-title">METADATA PREP</div>
                   <ul>
                     <li>Image → PNG blob</li>
-                    <li>Name & symbol</li>
-                    <li>Description generation</li>
-                    <li>Website URL</li>
+                    <li>Token name & symbol</li>
+                    <li>Metal properties</li>
+                    <li>Vault location</li>
                   </ul>
                 </div>
                 <div className="side-box teal">
@@ -359,64 +360,38 @@ export default function HowItWorks() {
         <section className="document-section">
           <div className="section-header">
             <div className="section-icon">■</div>
-            <h2 className="section-title">7. USER EXPERIENCE FLOW</h2>
+            <h2 className="section-title">7. VAULT & STORAGE SYSTEM</h2>
           </div>
           <div className="content-box">
             <div className="document-content">
-              <h3 className="subsection-title">7.1 Creation Workflow</h3>
+              <h3 className="subsection-title">7.1 Global Vault Network</h3>
               <p>
-                The user journey from initial design to token deployment follows a streamlined process:
+                Metal tokens can be associated with physical vault locations worldwide for backing representation:
               </p>
 
               <div className="info-box dark-box">
-                <div className="box-title">CREATION STEPS</div>
+                <div className="box-title">VAULT LOCATIONS</div>
                 <ul>
-                  <li><code>Step 1: Appearance Design (type, colors)</code></li>
-                  <li><code>Step 2: Personality Setup (traits, bio)</code></li>
-                  <li><code>Step 3: Preview Generation</code></li>
-                  <li><code>Step 4: Launch & Tokenization</code></li>
-                  <li><code>Step 5: Completion & Token Address</code></li>
+                  <li><code>Zurich, Switzerland 🇨🇭</code></li>
+                  <li><code>London, UK 🇬🇧</code></li>
+                  <li><code>Singapore 🇸🇬</code></li>
+                  <li><code>Dubai, UAE 🇦🇪</code></li>
+                  <li><code>Hong Kong 🇭🇰</code></li>
                 </ul>
               </div>
 
-              <h3 className="subsection-title">7.2 Post-Creation Features</h3>
+              <h3 className="subsection-title">7.2 Data Persistence</h3>
               <p>
-                After creation, users have access to multiple interaction and management features:
-              </p>
-
-              <div className="side-by-side-boxes">
-                <div className="side-box green">
-                  <div className="box-title">INTERACTION</div>
-                  <ul>
-                    <li>View pet profile</li>
-                    <li>Chat with pet (AI)</li>
-                    <li>Monitor stats</li>
-                    <li>Track activity</li>
-                  </ul>
-                </div>
-                <div className="side-box pink">
-                  <div className="box-title">SHARING</div>
-                  <ul>
-                    <li>Pump.fun token link</li>
-                    <li>Unique pet URL</li>
-                    <li>Social sharing</li>
-                    <li>Gallery display</li>
-                  </ul>
-                </div>
-              </div>
-
-              <h3 className="subsection-title">7.3 Data Persistence</h3>
-              <p>
-                All pet data persists locally using browser storage:
+                All metal token data persists locally using browser storage:
               </p>
 
               <div className="info-box yellow">
                 <div className="box-title">STORED DATA</div>
                 <ul>
-                  <li>Pet appearance configuration</li>
-                  <li>Personality traits and settings</li>
+                  <li>Metal type and properties</li>
+                  <li>Purity and weight configuration</li>
                   <li>Token address (if deployed)</li>
-                  <li>Stats and interaction history</li>
+                  <li>Vault location reference</li>
                   <li>Image data (base64)</li>
                 </ul>
               </div>
@@ -492,7 +467,7 @@ export default function HowItWorks() {
                 <div className="box-title">PERFORMANCE OPTIMIZATIONS</div>
                 <ul>
                   <li><code>Lazy loading of blockchain libraries</code></li>
-                  <li><code>Canvas-based pixel art rendering</code></li>
+                  <li><code>Canvas-based rendering</code></li>
                   <li><code>LocalStorage for instant access</code></li>
                   <li><code>Fast transaction sending (no wait)</code></li>
                 </ul>
@@ -510,10 +485,10 @@ export default function HowItWorks() {
           <div className="content-box">
             <div className="document-content">
               <p>
-                Project Pets represents a novel approach to RWA tokenization, combining emotional connection, digital art, and blockchain technology. By enabling users to create, personalize, and tokenize their pets, the platform bridges the gap between traditional pet ownership and the emerging world of digital assets. The integration with Pump.fun provides a seamless path from creation to tokenization, making blockchain technology accessible to users without deep technical knowledge.
+                Metal RWA represents a novel approach to precious metal tokenization, combining visual representation, property configuration, and blockchain technology. By enabling users to create, customize, and tokenize metal-backed tokens, the platform bridges the gap between physical metal ownership and the emerging world of digital assets. The integration with Pump.fun provides a seamless path from creation to tokenization, making blockchain technology accessible to users without deep technical knowledge.
               </p>
               <p>
-                The platform demonstrates how blockchain technology can be applied to create meaningful, personalized digital assets that maintain emotional value while gaining financial utility through tokenization. Each pet becomes a unique, tradeable asset that exists both as a visual representation and as a blockchain token, creating a new category of collectible tokens on Solana.
+                The platform demonstrates how blockchain technology can be applied to create meaningful RWA tokens that maintain intrinsic value while gaining DeFi utility through tokenization. Each metal token becomes a unique, tradeable asset that represents physical metal ownership, creating a new category of RWA tokens on Solana.
               </p>
             </div>
           </div>
@@ -522,4 +497,3 @@ export default function HowItWorks() {
     </div>
   );
 }
-

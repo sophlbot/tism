@@ -1,4 +1,4 @@
-/* App specific styles - Singularity Style */
+/* App specific styles - Metal RWA Style */
 
 .page {
   min-height: calc(100vh - 80px);
@@ -47,15 +47,18 @@
 
 .btn:active {
   transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 #000;
+  box-shadow: 2px 2px 0 var(--color-gold-dark);
 }
 
 .btn-primary {
-  background: var(--color-rose);
+  background: var(--color-gold);
+  color: var(--color-bg);
+  border-color: var(--color-gold-dark);
 }
 
 .btn-primary:hover {
-  background: var(--color-rose-dark);
+  background: var(--color-gold-dark);
+  color: var(--color-bg);
 }
 
 .btn-secondary {
@@ -67,52 +70,39 @@
 }
 
 .btn-accent {
-  background: #ffd93d;
-  color: var(--color-text);
+  background: var(--color-gold);
+  color: var(--color-bg);
 }
 
 .btn-accent:hover {
-  background: #ffcd00;
+  background: var(--color-gold-dark);
 }
 
-.btn-rose {
-  background: var(--color-rose);
+.btn-gold {
+  background: var(--color-gold);
+  color: var(--color-bg);
 }
 
-.btn-rose:hover {
-  background: var(--color-rose-dark);
+.btn-gold:hover {
+  background: var(--color-gold-dark);
 }
 
-.btn-mint {
-  background: var(--color-mint);
+.btn-silver {
+  background: var(--color-silver);
+  color: var(--color-bg);
 }
 
-.btn-mint:hover {
-  background: var(--color-mint-dark);
+.btn-silver:hover {
+  background: var(--color-silver-dark);
 }
 
-.btn-lavender {
-  background: var(--color-lavender);
+.btn-platinum {
+  background: var(--color-platinum);
+  color: var(--color-bg);
 }
 
-.btn-lavender:hover {
-  background: var(--color-lavender-dark);
-}
-
-.btn-peach {
-  background: var(--color-peach);
-}
-
-.btn-peach:hover {
-  background: var(--color-peach-dark);
-}
-
-.btn-sky {
-  background: var(--color-sky);
-}
-
-.btn-sky:hover {
-  background: var(--color-sky-dark);
+.btn-platinum:hover {
+  background: var(--color-platinum-dark);
 }
 
 .btn-small {
@@ -156,11 +146,10 @@
   letter-spacing: 0.05em;
 }
 
-.tag-rose { background: var(--color-rose); }
-.tag-mint { background: var(--color-mint); }
-.tag-lavender { background: var(--color-lavender); }
-.tag-peach { background: var(--color-peach); }
-.tag-sky { background: var(--color-sky); }
+.tag-gold { background: rgba(212, 175, 55, 0.2); color: var(--color-gold); border-color: var(--color-gold-dark); }
+.tag-silver { background: rgba(192, 192, 192, 0.2); color: var(--color-silver); border-color: var(--color-silver-dark); }
+.tag-platinum { background: rgba(229, 228, 226, 0.2); color: var(--color-platinum); border-color: var(--color-platinum-dark); }
+.tag-copper { background: rgba(184, 115, 51, 0.2); color: var(--color-copper); border-color: var(--color-copper-dark); }
 
 /* Live badge */
 .live-badge {
@@ -168,8 +157,8 @@
   align-items: center;
   gap: var(--spacing-xs);
   padding: var(--spacing-xs) var(--spacing-sm);
-  background: #ff6b6b;
-  color: white;
+  background: var(--color-gold);
+  color: var(--color-bg);
   border: var(--border);
   border-radius: var(--radius-sm);
   font-size: 0.7rem;
@@ -182,7 +171,7 @@
   content: '';
   width: 6px;
   height: 6px;
-  background: white;
+  background: var(--color-bg);
   border-radius: 50%;
 }
 
@@ -207,14 +196,15 @@
   border: var(--border);
   border-radius: var(--radius-sm);
   font-size: 0.95rem;
-  background: var(--color-bg-paper);
+  background: var(--color-bg-secondary);
+  color: var(--color-text);
   transition: all 0.15s ease;
 }
 
 .form-input:focus {
   outline: none;
-  box-shadow: var(--shadow-brutal);
-  transform: translate(-2px, -2px);
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
 }
 
 .form-input::placeholder {
@@ -236,10 +226,10 @@
   transition: width 0.3s ease;
 }
 
-.progress-fill.hunger { background: var(--color-peach-dark); }
-.progress-fill.happiness { background: var(--color-rose-dark); }
-.progress-fill.energy { background: var(--color-mint-dark); }
-.progress-fill.bond { background: var(--color-lavender-dark); }
+.progress-fill.gold { background: var(--color-gold); }
+.progress-fill.silver { background: var(--color-silver); }
+.progress-fill.platinum { background: var(--color-platinum); }
+.progress-fill.copper { background: var(--color-copper); }
 
 /* Stat item */
 .stat-item {
@@ -330,6 +320,7 @@
   text-transform: uppercase;
   font-size: 0.8rem;
   letter-spacing: 0.05em;
+  color: var(--color-gold);
 }
 
 .panel-content {
@@ -351,10 +342,9 @@
   border: 1px solid var(--color-border);
 }
 
-.status-dot.online { background: #6bcb77; }
-.status-dot.offline { background: #ff6b6b; }
-.status-dot.idle { background: #ffd93d; }
-.status-dot.sleeping { background: var(--color-lavender-dark); }
+.status-dot.active { background: #6bcb77; }
+.status-dot.pending { background: var(--color-gold); }
+.status-dot.inactive { background: var(--color-text-secondary); }
 
 /* Tabs */
 .tabs {
@@ -394,8 +384,8 @@
 }
 
 .tab.active {
-  background: var(--color-rose);
-  color: var(--color-text);
+  background: var(--color-gold);
+  color: var(--color-bg);
 }
 
 /* Icon button */
