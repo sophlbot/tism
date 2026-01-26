@@ -2,7 +2,7 @@ import { useState, useRef, useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
 import { usePets } from '../context/PetsContext';
-import { PetAppearance, PetPersonality, Pet, generateRandomStats, getRandomLocation } from '../types/pet';
+import { PetAppearance, PetPersonality, Pet, getRandomLocation } from '../types/pet';
 import { 
   MetalType, 
   METAL_INFO, 
@@ -14,8 +14,8 @@ import {
   FINISH_OPTIONS,
   SHAPE_OPTIONS
 } from '../types/project';
-import { getMetalIcon, METAL_ICONS } from '../components/Icons';
-import { canvasToDataURL, CANVAS_SIZE, drawPet } from '../utils/pixelArt';
+import { METAL_ICONS } from '../components/Icons';
+import { canvasToDataURL, CANVAS_SIZE } from '../utils/pixelArt';
 import { launchToken } from '../services/pumpfun';
 import './Create.css';
 
