@@ -5,10 +5,19 @@
     {
       "source": "/api/(.*)",
       "destination": "/api/$1"
+    }
+  ],
+  "routes": [
+    {
+      "handle": "filesystem"
     },
     {
-      "source": "/((?!api/).*)",
-      "destination": "/index.html"
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ],
   "headers": [
@@ -31,4 +40,3 @@
     }
   ]
 }
-
