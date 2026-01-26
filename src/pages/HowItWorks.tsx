@@ -13,7 +13,7 @@ export default function HowItWorks() {
           <div className="content-box">
             <div className="document-content">
               <p>
-                "Metal RWA" is a Real-World Asset (RWA) tokenization platform that transforms precious metals into unique digital tokens on the Solana blockchain. This platform combines pixel art generation, metal property customization, and blockchain technology to create a new form of metal-backed digital asset. Users can design custom pixel art representations of gold, silver, platinum, and other precious metals, configure physical properties like purity and weight, and launch their metal tokens on Pump.fun—a decentralized token launchpad. The central innovation lies in bridging physical metal ownership with the emerging world of tokenized assets, creating a novel intersection between precious metals and decentralized finance.
+                "Project Metals" is a Real-World Asset (RWA) tokenization platform that transforms precious metals into unique digital tokens on the Solana blockchain. This platform combines pixel art generation, metal property customization, and blockchain technology to create a new form of metal-backed digital asset. Users can design custom pixel art representations of gold, silver, platinum, and other precious metals, configure physical properties like purity and weight, and launch their metal tokens on Pump.fun—a decentralized token launchpad. The central innovation lies in bridging physical metal ownership with the emerging world of tokenized assets, creating a novel intersection between precious metals and decentralized finance.
               </p>
             </div>
           </div>
@@ -51,7 +51,7 @@ export default function HowItWorks() {
             <div className="document-content">
               <h3 className="subsection-title">1.1 Background</h3>
               <p>
-                Metal RWA enables users to create, customize, and tokenize digital representations of precious metals. The platform operates on three fundamental layers, bridging the gap between physical metal ownership and the emerging world of tokenized assets.
+                Project Metals enables users to create, customize, and tokenize digital representations of precious metals. The platform operates on three fundamental layers, bridging the gap between physical metal ownership and the emerging world of tokenized assets.
               </p>
               
               <div className="info-box blue">
@@ -485,7 +485,7 @@ export default function HowItWorks() {
           <div className="content-box">
             <div className="document-content">
               <p>
-                Metal RWA represents a novel approach to precious metal tokenization, combining visual representation, property configuration, and blockchain technology. By enabling users to create, customize, and tokenize metal-backed tokens, the platform bridges the gap between physical metal ownership and the emerging world of digital assets. The integration with Pump.fun provides a seamless path from creation to tokenization, making blockchain technology accessible to users without deep technical knowledge.
+                Project Metals represents a novel approach to precious metal tokenization, combining visual representation, property configuration, and blockchain technology. By enabling users to create, customize, and tokenize metal-backed tokens, the platform bridges the gap between physical metal ownership and the emerging world of digital assets. The integration with Pump.fun provides a seamless path from creation to tokenization, making blockchain technology accessible to users without deep technical knowledge.
               </p>
               <p>
                 The platform demonstrates how blockchain technology can be applied to create meaningful RWA tokens that maintain intrinsic value while gaining DeFi utility through tokenization. Each metal token becomes a unique, tradeable asset that represents physical metal ownership, creating a new category of RWA tokens on Solana.
