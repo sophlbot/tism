@@ -18,8 +18,11 @@ const PUMP_FUN_IPFS = '/api/pump-fun/ipfs';
 // Website URL for pet pages (update this when deployed)
 const WEBSITE_URL = import.meta.env.VITE_WEBSITE_URL || 'http://localhost:5173';
 
-// Solana RPC URL (use devnet for testing, mainnet for production)
-const RPC_URL = import.meta.env.VITE_RPC_URL || 'https://api.devnet.solana.com';
+const RPC_URLS = [
+  import.meta.env.VITE_RPC_URL,
+  'https://api.mainnet-beta.solana.com',
+  'https://solana-mainnet.g.alchemy.com/v2/demo',
+].filter(Boolean) as string[];
 
 interface TokenMetadata {
   name: string;
@@ -224,9 +227,9 @@ export async function launchToken(
     const wallet = await getWalletKeypair();
     console.log('   Wallet address:', wallet.publicKey.toBase58());
     
-    // Check wallet balance
-    const connection = new Connection(RPC_URL, 'confirmed');
-    console.log('   Connected to RPC:', RPC_URL);
+    // Try each RPC until one works
+    let connection = new Connection(RPC_URLS[0], { commitment: 'confirmed', confirmTransactionInitialTimeout: 30000 });
+    console.log('   Connected to RPC:', RPC_URLS[0]);
     
     try {
       const balance = await connection.getBalance(wallet.publicKey);
@@ -236,6 +239,17 @@ export async function launchToken(
       }
     } catch (balanceError: any) {
       console.warn('   Could not check balance:', balanceError.message);
+      if (balanceError.message?.includes('429') || balanceError.message?.includes('rate')) {
+        for (let i = 1; i < RPC_URLS.length; i++) {
+          console.log('   Trying fallback RPC:', RPC_URLS[i]);
+          connection = new Connection(RPC_URLS[i], { commitment: 'confirmed', confirmTransactionInitialTimeout: 30000 });
+          try {
+            await connection.getBalance(wallet.publicKey);
+            console.log('   Fallback RPC works:', RPC_URLS[i]);
+            break;
+          } catch { /* try next */ }
+        }
+      }
     }
     
     // Generate new mint keypair
@@ -290,10 +304,27 @@ export async function launchToken(
     }
     console.log('   Transaction built with', instructionsArray.length, 'instructions');
     
-    // Get FRESH blockhash right before sending
+    // Get FRESH blockhash with retry across RPCs
     console.log('   Getting fresh blockhash...');
-    const { blockhash } = await connection.getLatestBlockhash('finalized');
-    console.log('   Blockhash obtained');
+    let blockhash: string = '';
+    for (let attempt = 0; attempt < 5; attempt++) {
+      try {
+        const result = await connection.getLatestBlockhash('finalized');
+        blockhash = result.blockhash;
+        console.log('   Blockhash obtained on attempt', attempt + 1);
+        break;
+      } catch (bhError: any) {
+        console.warn(`   Blockhash attempt ${attempt + 1} failed:`, bhError.message);
+        if (attempt < 4) {
+          const fallbackIdx = (attempt + 1) % RPC_URLS.length;
+          connection = new Connection(RPC_URLS[fallbackIdx], { commitment: 'confirmed', confirmTransactionInitialTimeout: 30000 });
+          console.log('   Switching to RPC:', RPC_URLS[fallbackIdx]);
+          await new Promise(r => setTimeout(r, 1000 * (attempt + 1)));
+        } else {
+          throw new Error(`Failed to get blockhash after 5 attempts: ${bhError.message}`);
+        }
+      }
+    }
     
     transaction.recentBlockhash = blockhash;
     transaction.feePayer = wallet.publicKey;
@@ -303,12 +334,27 @@ export async function launchToken(
     transaction.sign(wallet, mint);
     console.log('   Transaction signed');
     
-    // Send transaction IMMEDIATELY - don't wait for confirmation (this is fast!)
-    console.log('5. Sending transaction (fast mode, no wait)...');
-    const signature = await connection.sendRawTransaction(transaction.serialize(), {
-      skipPreflight: false,
-      maxRetries: 3,
-    });
+    // Send transaction with retry across RPCs
+    console.log('5. Sending transaction...');
+    let signature: string = '';
+    for (let attempt = 0; attempt < 3; attempt++) {
+      try {
+        signature = await connection.sendRawTransaction(transaction.serialize(), {
+          skipPreflight: true,
+          maxRetries: 3,
+        });
+        break;
+      } catch (sendError: any) {
+        console.warn(`   Send attempt ${attempt + 1} failed:`, sendError.message);
+        if (attempt < 2) {
+          const fallbackIdx = (attempt + 1) % RPC_URLS.length;
+          connection = new Connection(RPC_URLS[fallbackIdx], { commitment: 'confirmed', confirmTransactionInitialTimeout: 30000 });
+          await new Promise(r => setTimeout(r, 1000));
+        } else {
+          throw sendError;
+        }
+      }
+    }
     
     console.log('✅ Transaction sent successfully!');
     console.log('   Signature:', signature);
