@@ -1,0 +1,202 @@
+.friend-page {
+  padding: var(--spacing-xl) var(--spacing-lg);
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: var(--color-orange);
+}
+
+.friend-not-found {
+  text-align: center;
+  padding: var(--spacing-2xl);
+}
+
+.friend-not-found h2 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.friend-not-found p {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.friend-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .friend-detail {
+    grid-template-columns: 1fr;
+  }
+}
+
+.friend-detail-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.friend-detail-image-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: linear-gradient(135deg, rgba(245, 166, 35, 0.05), rgba(79, 195, 247, 0.05));
+}
+
+.friend-detail-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.friend-detail-right {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.friend-detail-name {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin: 0;
+}
+
+.friend-detail-lore {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.friend-detail-traits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.friend-trait-tag {
+  font-size: 0.75rem;
+  padding: 5px 14px;
+  background: linear-gradient(135deg, rgba(245, 166, 35, 0.15), rgba(255, 185, 68, 0.15));
+  color: var(--color-orange-dark);
+  border-radius: var(--radius-full);
+  font-weight: 700;
+}
+
+/* Token Status Block */
+.friend-token-status {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-xl);
+  border: 2px solid var(--color-border);
+  background: var(--color-bg-paper);
+  box-shadow: var(--shadow-clay);
+}
+
+.friend-token-status.tokenized {
+  border-color: rgba(107, 191, 107, 0.5);
+  background: linear-gradient(135deg, rgba(107, 191, 107, 0.06), rgba(107, 191, 107, 0.02));
+}
+
+.friend-token-status.available {
+  border-color: rgba(245, 166, 35, 0.4);
+  background: linear-gradient(135deg, rgba(245, 166, 35, 0.06), rgba(255, 185, 68, 0.03));
+}
+
+.token-status-header {
+  margin-bottom: var(--spacing-md);
+}
+
+.token-badge-big {
+  display: inline-block;
+  padding: 6px 16px;
+  background: linear-gradient(135deg, #66BB6A, #43A047);
+  color: white;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.token-badge-available {
+  display: inline-block;
+  padding: 6px 16px;
+  background: linear-gradient(135deg, var(--color-orange), var(--color-orange-light));
+  color: white;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.token-status-hint {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  margin-top: var(--spacing-sm);
+}
+
+.token-status-details {
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.token-status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  font-size: 0.85rem;
+}
+
+.token-status-row span {
+  color: var(--color-text-secondary);
+}
+
+.token-status-row strong {
+  font-weight: 800;
+}
+
+.token-status-row + .token-status-row {
+  border-top: 1px solid var(--color-border);
+}
+
+.token-addr {
+  font-size: 0.72rem;
+  color: var(--color-orange);
+  font-family: monospace;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.btn-pump {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.btn-create-link {
+  display: inline-block;
+  text-align: center;
+  margin-top: var(--spacing-sm);
+}

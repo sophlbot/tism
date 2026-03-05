@@ -1,23 +1,14 @@
 import { Link } from 'react-router-dom';
 import { usePets } from '../context/PetsContext';
-import { METAL_INFO, MetalType, METAL_CATEGORIES } from '../types/project';
-import { METAL_ICONS } from '../components/Icons';
+import { FRIENDS } from '../data/friends';
 import './Home.css';
-
-const FEATURED_METALS: MetalType[] = ['gold', 'silver', 'platinum', 'palladium', 'copper', 'bronze'];
-
-// List of valid metal types to filter out old pet tokens
-const VALID_METAL_TYPES = Object.keys(METAL_INFO);
 
 export default function Home() {
   const { pets } = usePets();
-  
-  // Filter only metal tokens (new ones created via Metal Create)
-  // They have a valid metal type in quirks[0]
-  const metalTokens = pets.filter(pet => {
-    const metalType = pet.personality?.quirks?.[0];
-    return metalType && VALID_METAL_TYPES.includes(metalType);
-  });
+
+  const tokenizedFriendIds = new Set(
+    pets.filter(p => p.friendId).map(p => p.friendId!)
+  );
 
   return (
     <div className="page home-page">
@@ -31,120 +22,95 @@ export default function Home() {
                 <span className="browser-dot yellow"></span>
                 <span className="browser-dot green"></span>
               </div>
-              <div className="browser-url">https://projectmetals.app</div>
+              <div className="browser-url">https://tism.app</div>
             </div>
             <div className="browser-content hero-content">
+              <div className="hero-mascot">
+                <img src="/tism.png" alt="tism" className="hero-mascot-img" />
+              </div>
               <h1 className="hero-title">
-                TOKENIZE YOUR
+                TOKENIZE
                 <br />
-                <span className="hero-highlight">PRECIOUS METALS</span>
+                <span className="hero-highlight">FRIENDS FOR TISM</span>
               </h1>
               <p className="hero-subtitle">
-                Create unique pixel art tokens backed by real gold, silver, platinum 
-                and other precious metals on Solana
+                tism is a lonely puzzle piece looking for friends. 
+                Create unique friend tokens on Solana and help tism 
+                find where he belongs.
               </p>
               <div className="hero-actions">
                 <Link to="/create" className="btn btn-accent">
-                  🪙 Create Metal Token
+                  Create a Friend
                 </Link>
+                <Link to="/about" className="btn btn-secondary">
+                  Who is tism?
+                </Link>
+              </div>
+              <div className="hero-ca">
+                <a
+                  href="https://pump.fun/GWXvtRy1HeyLbaU2M43c5iWRb4wirzqrwnUbP7GQpump"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ca-link"
+                >
+                  CA: GWXvtRy1HeyLbaU2M43c5iWRb4wirzqrwnUbP7GQpump
+                </a>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Features */}
+        {/* How it works */}
         <section className="features">
           <div className="feature">
             <div className="feature-number">01</div>
-            <h3>Choose Metal</h3>
-            <p>Select from 50+ metals including gold, silver, platinum and rare earth elements</p>
+            <h3>Pick a Friend</h3>
+            <p>Choose one of tism's friends — each has a unique personality and story</p>
           </div>
           <div className="feature">
             <div className="feature-number">02</div>
             <h3>Customize</h3>
-            <p>Pick color variant, purity, shape, finish and vault location</p>
+            <p>Give the friend a token name, ticker and description. Make it yours</p>
           </div>
           <div className="feature">
             <div className="feature-number">03</div>
-            <h3>Tokenize</h3>
-            <p>Launch your RWA metal token on Pump.fun and trade it globally</p>
+            <h3>Deploy on Solana</h3>
+            <p>Launch the friend token on Pump.fun. Once tokenized, the friend is taken</p>
           </div>
         </section>
 
-        {/* Available Metals */}
-        <section className="metals-showcase">
+        {/* Friends Showcase */}
+        <section className="friends-showcase">
           <div className="section-header">
-            <h2>AVAILABLE METALS</h2>
-            <span className="metals-count">50+ metals</span>
+            <h2>TISM'S FRIENDS</h2>
+            <span className="friends-count">{FRIENDS.length} friends</span>
           </div>
           
-          <div className="metals-preview-grid">
-            {FEATURED_METALS.map((metal) => {
-              const info = METAL_INFO[metal];
-              const IconComponent = METAL_ICONS[metal];
+          <div className="friends-grid">
+            {FRIENDS.map((friend) => {
+              const isTokenized = tokenizedFriendIds.has(friend.id);
               return (
-                <div key={metal} className="metal-preview-card">
-                  <div className="metal-preview-icon">
-                    <IconComponent size={64} color={info.color} />
+                <Link key={friend.id} to={`/friend/${friend.id}`} className={`friend-card ${isTokenized ? 'friend-card-tokenized' : ''}`}>
+                  <div className="friend-image">
+                    <img src={friend.image} alt={friend.name} />
+                    {isTokenized && (
+                      <div className="friend-tokenized-badge">TOKENIZED</div>
+                    )}
                   </div>
-                  <div className="metal-preview-info">
-                    <span className="metal-preview-name" style={{ color: info.color }}>
-                      {info.name}
-                    </span>
-                    <span className="metal-preview-symbol">{info.symbol}</span>
+                  <div className="friend-info">
+                    <span className="friend-name">{friend.name}</span>
+                    <p className="friend-lore">{friend.lore}</p>
+                    <div className="friend-traits">
+                      {friend.traits.map((trait) => (
+                        <span key={trait} className="friend-trait">{trait}</span>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>
-
-          <div className="metals-categories">
-            {METAL_CATEGORIES.map(cat => (
-              <span key={cat.id} className="category-badge">
-                {cat.icon} {cat.name}
-              </span>
-            ))}
-          </div>
-
-          <div className="showcase-cta">
-            <Link to="/create" className="btn btn-gold">
-              View All Metals →
-            </Link>
-          </div>
         </section>
-
-        {/* Recent Tokens - Only show new metal tokens */}
-        {metalTokens.length > 0 && (
-          <section className="recent-tokens">
-            <div className="section-header">
-              <h2>RECENT TOKENS</h2>
-              <span className="metals-count">{metalTokens.length} created</span>
-            </div>
-            
-            <div className="tokens-grid">
-              {metalTokens.slice(0, 6).map((token) => {
-                const metalType = token.personality?.quirks?.[0] as MetalType;
-                const metalInfo = METAL_INFO[metalType] || METAL_INFO.gold;
-                const IconComponent = METAL_ICONS[metalType] || METAL_ICONS.gold;
-                const displayColor = token.appearance?.bodyColor || metalInfo.color;
-                
-                return (
-                  <Link key={token.id} to={`/pet/${token.id}`} className="token-card">
-                    <div className="token-image">
-                      <IconComponent size={80} color={displayColor} />
-                    </div>
-                    <div className="token-info">
-                      <span className="token-name">{token.personality.name}</span>
-                      {token.tokenAddress && (
-                        <span className="token-badge">🪙 Tokenized</span>
-                      )}
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
-          </section>
-        )}
       </div>
     </div>
   );

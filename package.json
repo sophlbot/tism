@@ -1,7 +1,7 @@
 {
-  "name": "project-pets",
+  "name": "tism",
   "version": "1.0.0",
-  "description": "RWA Platform for tokenizing pets on Pump.fun",
+  "description": "Tokenize friends for tism on Pump.fun",
   "type": "module",
   "scripts": {
     "dev": "vite",

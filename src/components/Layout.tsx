@@ -1,4 +1,4 @@
-import { ReactNode, useState, useEffect } from 'react';
+import { ReactNode } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Layout.css';
 
@@ -8,35 +8,15 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   const location = useLocation();
-  const [time, setTime] = useState(new Date());
-
-  useEffect(() => {
-    const timer = setInterval(() => setTime(new Date()), 1000);
-    return () => clearInterval(timer);
-  }, []);
 
   const isActive = (path: string) => location.pathname === path;
-
-  const formatTime = (date: Date) => {
-    return date.toLocaleTimeString('en-US', { 
-      hour: '2-digit', 
-      minute: '2-digit',
-      hour12: false 
-    });
-  };
-
-  const formatDay = (date: Date) => {
-    return date.toLocaleDateString('en-US', { 
-      weekday: 'short'
-    }).toUpperCase();
-  };
 
   return (
     <div className="layout">
       <header className="header">
         <div className="header-content">
           <Link to="/" className="logo">
-            PROJECT METALS
+            tism
           </Link>
 
           <nav className="nav-tabs">
@@ -53,29 +33,22 @@ export default function Layout({ children }: LayoutProps) {
               CREATE
             </Link>
             <Link 
-              to="/how-it-works" 
-              className={`nav-tab ${isActive('/how-it-works') ? 'active' : ''}`}
+              to="/about" 
+              className={`nav-tab ${isActive('/about') ? 'active' : ''}`}
             >
-              DOCS
+              ABOUT
             </Link>
           </nav>
 
           <div className="header-right">
-            <div className="live-badge">
-              LIVE
-            </div>
             <a 
-              href="https://x.com/projectmetals" 
+              href="https://x.com/tismthepuzzle" 
               target="_blank" 
               rel="noopener noreferrer"
               className="x-button"
             >
               X
             </a>
-            <div className="header-time">
-              <span className="time">{formatTime(time)}</span>
-              <span className="day">{formatDay(time)}</span>
-            </div>
           </div>
         </div>
       </header>
@@ -86,9 +59,27 @@ export default function Layout({ children }: LayoutProps) {
 
       <footer className="footer">
         <div className="footer-content">
-          <span className="footer-logo">PROJECT METALS</span>
+          <span className="footer-logo">tism</span>
           <span className="footer-divider">|</span>
-          <span className="footer-text">Tokenize Precious Metals on Solana</span>
+          <span className="footer-text">Tokenize Friends on Solana</span>
+          <span className="footer-divider">|</span>
+          <a
+            href="https://pump.fun/GWXvtRy1HeyLbaU2M43c5iWRb4wirzqrwnUbP7GQpump"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-ca"
+          >
+            CA: GWXvtRy1...GQpump
+          </a>
+          <span className="footer-divider">|</span>
+          <a
+            href="https://x.com/tismthepuzzle"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-x-link"
+          >
+            @tismthepuzzle
+          </a>
         </div>
       </footer>
     </div>

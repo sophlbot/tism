@@ -49,6 +49,7 @@ export interface Pet {
   location: string;
   imageData: string;
   tokenAddress?: string;
+  friendId?: string;
   createdAt: number;
   lastInteraction: number;
 }

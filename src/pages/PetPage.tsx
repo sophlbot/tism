@@ -1,32 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { usePets } from '../context/PetsContext';
-import { METAL_INFO, MetalType } from '../types/project';
-import { METAL_ICONS } from '../components/Icons';
+import { FRIENDS } from '../data/friends';
 import PumpFunLogo from '../components/PumpFunLogo';
 import './PetPage.css';
-
-const getMetalTypeFromPet = (pet: any): MetalType => {
-  const colorMap: Record<string, MetalType> = {
-    '#D4AF37': 'gold',
-    '#C0C0C0': 'silver',
-    '#E5E4E2': 'platinum',
-    '#B87333': 'copper',
-    '#CD7F32': 'bronze',
-    '#CED0CE': 'palladium',
-    '#FF4444': 'gold',
-    '#4477FF': 'gold',
-    '#44DD44': 'gold',
-    '#9944FF': 'gold',
-    '#FF8844': 'gold',
-    '#FF66AA': 'gold',
-    '#44DDDD': 'gold',
-    '#FFDD44': 'gold',
-    '#FFFFFF': 'silver',
-    '#333333': 'iron',
-  };
-  return colorMap[pet.appearance?.bodyColor] || 'gold';
-};
 
 export default function PetPage() {
   const { id } = useParams<{ id: string }>();
@@ -41,7 +18,7 @@ export default function PetPage() {
 
   if (!pet) {
     return (
-      <div className="page metal-page">
+      <div className="page token-page">
         <div className="container">
           <div className="not-found browser-window">
             <div className="browser-header">
@@ -50,11 +27,11 @@ export default function PetPage() {
                 <span className="browser-dot yellow"></span>
                 <span className="browser-dot green"></span>
               </div>
-              <div className="browser-url">projectmetals.app/token/not-found</div>
+              <div className="browser-url">tism.app/token/not-found</div>
             </div>
             <div className="browser-content not-found-content">
-              <h2>Token not found</h2>
-              <p>This token doesn't exist or has been removed.</p>
+              <h2>Friend not found</h2>
+              <p>This friend doesn't exist or has been removed.</p>
               <Link to="/" className="btn btn-secondary">
                 Back to Home
               </Link>
@@ -65,74 +42,57 @@ export default function PetPage() {
     );
   }
 
-  const metalType = getMetalTypeFromPet(pet);
-  const metalInfo = METAL_INFO[metalType];
-  const IconComponent = METAL_ICONS[metalType];
-  const displayColor = pet.appearance?.bodyColor || metalInfo.color;
+  const friendMatch = FRIENDS.find(f =>
+    pet.personality.quirks?.some(q => f.traits.includes(q)) ||
+    f.name === pet.personality.name
+  );
+  const friendImage = friendMatch?.image || '/tism.png';
+  const friendColor = pet.appearance?.bodyColor || friendMatch?.color || '#F5A623';
 
   return (
-    <div className="page metal-page">
+    <div className="page token-page">
       <div className="container">
-        <div className="metal-detail browser-window">
+        <div className="token-detail browser-window">
           <div className="browser-header">
             <div className="browser-dots">
               <span className="browser-dot red"></span>
               <span className="browser-dot yellow"></span>
               <span className="browser-dot green"></span>
             </div>
-            <div className="browser-url">projectmetals.app/token/{pet.personality.name.toLowerCase().replace(/\s/g, '-')}</div>
+            <div className="browser-url">tism.app/token/{pet.personality.name.toLowerCase().replace(/\s/g, '-')}</div>
           </div>
-          <div className="browser-content metal-content">
-            {/* Metal Image */}
-            <div className="metal-image-section">
-              <div className="metal-image-wrapper">
-                <IconComponent size={200} color={displayColor} />
+          <div className="browser-content token-content">
+            <div className="token-image-section">
+              <div className="token-image-wrapper">
+                <img src={friendImage} alt={pet.personality.name} className="token-detail-img" />
               </div>
             </div>
 
-            {/* Metal Info */}
-            <div className="metal-info-section">
-              <h1 className="metal-title" style={{ color: displayColor }}>
+            <div className="token-info-section">
+              <h1 className="token-title" style={{ color: friendColor }}>
                 {pet.personality.name}
               </h1>
-              
+
               {pet.personality.bio && (
-                <p className="metal-description">{pet.personality.bio}</p>
+                <p className="token-description">{pet.personality.bio}</p>
               )}
 
-              <div className="metal-details">
-                <div className="detail-item">
-                  <span className="detail-label">Metal</span>
-                  <span className="detail-value" style={{ color: metalInfo.color }}>
-                    {metalInfo.name}
-                  </span>
-                </div>
-                <div className="detail-item">
-                  <span className="detail-label">Symbol</span>
-                  <span className="detail-value">{metalInfo.symbol}</span>
-                </div>
+              <div className="token-details">
                 {pet.personality.quirks && pet.personality.quirks.length > 0 && (
-                  <>
-                    {pet.personality.quirks[1] && (
-                      <div className="detail-item">
-                        <span className="detail-label">Purity</span>
-                        <span className="detail-value">{pet.personality.quirks[1]}</span>
-                      </div>
-                    )}
-                    {pet.personality.quirks[3] && (
-                      <div className="detail-item">
-                        <span className="detail-label">Shape</span>
-                        <span className="detail-value">{pet.personality.quirks[3]}</span>
-                      </div>
-                    )}
-                  </>
+                  <div className="detail-item">
+                    <span className="detail-label">Traits</span>
+                    <div className="detail-traits">
+                      {pet.personality.quirks.map((q, i) => (
+                        <span key={i} className="detail-trait-tag">{q}</span>
+                      ))}
+                    </div>
+                  </div>
                 )}
               </div>
 
-              {/* Token Link */}
               {pet.tokenAddress ? (
                 <div className="token-section">
-                  <a 
+                  <a
                     href={`https://pump.fun/${pet.tokenAddress}`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -148,7 +108,7 @@ export default function PetPage() {
               ) : (
                 <div className="token-section">
                   <div className="no-token">
-                    <span>🪙 Not yet tokenized</span>
+                    <span>Not yet tokenized</span>
                   </div>
                 </div>
               )}

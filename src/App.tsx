@@ -4,6 +4,7 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import Create from './pages/Create';
 import PetPage from './pages/PetPage';
+import FriendPage from './pages/FriendPage';
 import HowItWorks from './pages/HowItWorks';
 import './styles/app.css';
 
@@ -14,7 +15,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/create" element={<Create />} />
+          <Route path="/friend/:id" element={<FriendPage />} />
           <Route path="/pet/:id" element={<PetPage />} />
+          <Route path="/about" element={<HowItWorks />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
         </Routes>
       </Layout>
