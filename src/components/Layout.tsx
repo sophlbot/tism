@@ -64,12 +64,12 @@ export default function Layout({ children }: LayoutProps) {
           <span className="footer-text">Tokenize Friends on Solana</span>
           <span className="footer-divider">|</span>
           <a
-            href="https://pump.fun/GWXvtRy1HeyLbaU2M43c5iWRb4wirzqrwnUbP7GQpump"
+            href="https://pump.fun/24v41oTQ4pnzNLrjSqjnr9eG5XfZLn9VjCSvxpLfpump"
             target="_blank"
             rel="noopener noreferrer"
             className="footer-ca"
           >
-            CA: GWXvtRy1...GQpump
+            CA: 24v41oTQ...Lfpump
           </a>
           <span className="footer-divider">|</span>
           <a

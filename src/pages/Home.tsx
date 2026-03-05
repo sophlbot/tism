@@ -48,12 +48,12 @@ export default function Home() {
               </div>
               <div className="hero-ca">
                 <a
-                  href="https://pump.fun/GWXvtRy1HeyLbaU2M43c5iWRb4wirzqrwnUbP7GQpump"
+                  href="https://pump.fun/24v41oTQ4pnzNLrjSqjnr9eG5XfZLn9VjCSvxpLfpump"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="ca-link"
                 >
-                  CA: GWXvtRy1HeyLbaU2M43c5iWRb4wirzqrwnUbP7GQpump
+                  CA: 24v41oTQ4pnzNLrjSqjnr9eG5XfZLn9VjCSvxpLfpump
                 </a>
               </div>
             </div>
